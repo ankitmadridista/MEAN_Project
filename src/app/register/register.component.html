@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div
+      class="col-md-6 col-sm-12 border shadow d-flex flex-column justify-content-center"
+      [formGroup]="fbFormGroup"
+      style="height: 80vh; background: whitesmoke; margin-top: 100px"
+    >
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          class="form-control form-control-sm"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control form-control-sm"
+          formControlName="password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleName">Your Name</label>
+        <input
+          type="email"
+          class="form-control form-control-sm"
+          formControlName="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleImob">Mobile Number</label>
+        <input
+          type="email"
+          class="form-control form-control-sm"
+          formControlName="mobile"
+        />
+      </div>
+
+      <button
+        class="btn btn-primary btn-sm my-2"
+        [disabled]="!fbFormGroup.valid"
+        (click)="registerHere()"
+      >
+        Submit
+      </button>
+
+      <a routerLink="/login">Login Here</a>
+    </div>
+  </div>
+</div>

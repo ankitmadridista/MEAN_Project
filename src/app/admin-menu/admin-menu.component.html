@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <!-- get user data Block -->
+    <div class="col-sm-12 col-md-10 mt-4 border shadow d-flex flex-column">
+      <div class="h3">
+        User Info
+        <button class="btn btn-sm btn-secondary" (click)="showUsers()">
+          enter
+        </button>
+      </div>
+      <div class="h6">
+        <div class="row" style="height: 40px" *ngIf="userData">
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Username
+          </div>
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Password
+          </div>
+          <div
+            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Email
+          </div>
+          <div
+            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Mobile
+          </div>
+          <div
+            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Task
+          </div>
+        </div>
+
+        <!-- for loop for iteration -->
+
+        <div class="row" style="height: 50px" *ngFor="let x of arr">
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="menuData"
+          >
+            {{ x.username }}
+          </div>
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="menuData"
+          >
+            {{ x.password }}
+          </div>
+          <div
+            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="menuData"
+          >
+            {{ x.email }}
+          </div>
+          <div
+            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="menuData"
+          >
+            {{ x.mobile }}
+          </div>
+          <div
+            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="menuData"
+          >
+            <button class="btn btn-sm btn-warning" (click)="del(x.username)">
+              del
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

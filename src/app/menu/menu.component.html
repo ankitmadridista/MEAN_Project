@@ -1,0 +1,46 @@
+<p>menu works!</p>
+
+<div class="row justify-content-center align-items-center">
+  <div class="col-6 my-5 d-flex justify-content-center align-items-center">
+    <button class="btn btn-info btn-block" (click)="showMenu()">
+      show today's menu
+    </button>
+  </div>
+</div>
+
+<div
+  class="row mt-4 justify-content-center"
+  *ngIf="uiInvalidCredential"
+  style="height: 40px; margin-top: 10px"
+>
+  <div class="col-1 border rounded border-primary">Day</div>
+  <div class="col-1 border rounded border-primary">Rice</div>
+  <div class="col-1 border rounded border-primary">Roti</div>
+  <div class="col-1 border rounded border-primary">Curry</div>
+  <div class="col-1 border rounded border-primary">Sweet_Dish</div>
+  <div class="col-1 border rounded border-primary">Total_Price</div>
+</div>
+<div
+  class="row justify-content-center"
+  *ngIf="uiInvalidCredential"
+  style="height: 50px"
+>
+  <div class="col-1 border rounded border-info">
+    {{ arr.dayN }}
+  </div>
+  <div class="col-1 border rounded border-info">
+    {{ arr.rice }}
+  </div>
+  <div class="col-1 border rounded border-info">
+    {{ arr.rotis }}
+  </div>
+  <div class="col-1 border rounded border-info">
+    {{ arr.curry }}
+  </div>
+  <div class="col-1 border rounded border-info">
+    {{ arr.sweetdish }}
+  </div>
+  <div class="col-1 border rounded border-info">
+    {{ arr.price }}
+  </div>
+</div>

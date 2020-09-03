@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row bg-warning sticky-top" style="height: 55px">
+    <div class="col d-flex align-items-center">CANTEEN</div>
+    <div class="col d-flex justify-content-end align-items-center">
+      <a class="btn btn-outline-light mr-1" routerLink="/admin-home"
+        >Admin Menu</a
+      >
+
+      <button class="btn btn-outline-light mr-1" (click)="processLogout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
