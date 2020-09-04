@@ -10,8 +10,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
   public fbFormGroup = this.fb.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required],
+    username: [
+      '',
+      [Validators.required, Validators.minLength(5), Validators.maxLength(15)],
+    ],
+    password: [
+      '',
+      [Validators.required, Validators.minLength(8), Validators.maxLength(25)],
+    ],
     email: ['', Validators.required],
     mobile: ['', Validators.required],
   });
