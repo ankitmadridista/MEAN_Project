@@ -1,1 +1,86 @@
-<p>forget works!</p>
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <div class="col-md-6 col-sm-12">
+      <img [src]="imgsrc" alt="" style="height: 100%; width: 100%" />
+    </div>
+    <div class="col-6 mt-2 d-flex flex-column justify-content-center">
+      <div
+        class="row flex-column justify-content-center align-items-center"
+        [formGroup]="fbFormGroup1"
+      >
+        <!-- email verification-->
+        <div class="col-8 h5 alert alert-danger" *ngIf="uiAlert" role="alert">
+          Password not matching...!!!
+        </div>
+        <div
+          class="col-8 h5 alert alert-danger"
+          *ngIf="uiEmailAlert"
+          role="alert"
+        >
+          Email ID does not exists..!!!
+        </div>
+        <div class="col-8 h3" *ngIf="uiEmail" style="text-align: center">
+          FORGET PASSWORD ?
+        </div>
+
+        <div
+          class="col-8 my-2 form-group d-flex justify-content-center"
+          *ngIf="uiEmail"
+        >
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email here"
+          />
+        </div>
+        <div class="col-8" *ngIf="uiEmail">
+          <button
+            class="btn btn-primary btn-block btn-sm my-2"
+            [disabled]="!fbFormGroup1.valid"
+            (click)="authEmailHere()"
+          >
+            SEND
+          </button>
+        </div>
+      </div>
+      <!-- Enter pwd-->
+      <div
+        class="row flex-column justify-content-center align-items-center"
+        [formGroup]="fbFormGroup2"
+      >
+        <div class="col-8 h3" *ngIf="uiForget" style="text-align: center">
+          ENTER PASSWORD
+        </div>
+        <div class="col-8" *ngIf="uiForget">
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            aria-describedby="emailHelp"
+            placeholder="Enter Password"
+          />
+        </div>
+        <div class="col-8" *ngIf="uiForget">
+          <input
+            type="password"
+            class="form-control"
+            formControlName="rpassword"
+            aria-describedby="emailHelp"
+            placeholder="Renter Password"
+          />
+        </div>
+        <div class="col-8" *ngIf="uiForget">
+          <button
+            class="btn btn-primary btn-block btn-sm my-2"
+            [disabled]="!fbFormGroup2.valid"
+            (click)="updatePassword()"
+          >
+            RESET
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

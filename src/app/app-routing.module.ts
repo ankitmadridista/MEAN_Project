@@ -10,9 +10,14 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MenuComponent } from './menu/menu.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ForgetComponent } from './forget/forget.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  { path: 'forget', component: ForgetComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'home',
