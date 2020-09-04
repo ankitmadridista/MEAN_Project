@@ -24,13 +24,24 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  validateData() {
+    const data = this.fbFormGroup.value;
+    data.username = data.username.trim();
+    data.password = data.password.trim();
+    data.email = data.email.trim();
+    data.mobile = data.mobile.trim();
+
+    console.log(data);
+  }
+
   async registerHere() {
+    this.validateData();
     const data = this.fbFormGroup.value;
     //console.log(data);
     const url = 'http://localhost:3500/adduser';
 
     await this.http.post(url, data).toPromise();
 
-    this.router.navigate(['login']);
+    //this.router.navigate(['login']);
   }
 }
