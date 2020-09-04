@@ -12,14 +12,42 @@ export class RegisterComponent implements OnInit {
   public fbFormGroup = this.fb.group({
     username: [
       '',
-      [Validators.required, Validators.minLength(5), Validators.maxLength(15)],
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(15),
+        Validators.pattern('^[a-zA-Z0-9]+$'),
+      ],
     ],
     password: [
       '',
-      [Validators.required, Validators.minLength(8), Validators.maxLength(25)],
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(20),
+        // Validators.pattern('^(?=.[\\d])(?=.[a-z])(?=.[A-Z])(?!.[\\s]).{8,20}$'),
+      ],
     ],
-    email: ['', Validators.required],
-    mobile: ['', Validators.required],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+        Validators.pattern(
+          '^[a-zA-Z0-9_\\.]+@[a-zA-Z0-9_\\.]+(\\.[a-zA-Z0-9_\\.]+)+$'
+        ),
+      ],
+    ],
+    mobile: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10),
+        Validators.pattern('[0-9]{10}'),
+      ],
+    ],
   });
   public uiInvalidCredential = false;
 
