@@ -29,14 +29,14 @@ export class AdminMenuComponent implements OnInit {
   async del(input) {
     //ajax call
     let obj = { input };
-    console.log(obj);
+    //console.log(obj);
     const url = 'http://localhost:3500/del';
     let results = await this.http.post(url, obj).toPromise();
     //console.log('on client side', results);
 
     if (results) {
       this.menuData = false;
-      this.userData = false;
+      this.showUsers();
     }
   }
 }
