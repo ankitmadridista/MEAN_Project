@@ -11,8 +11,12 @@ import { ShowMenuModalComponent } from '../show-menu-modal/show-menu-modal.compo
 })
 export class MenuComponent implements OnInit {
   public menu = false;
-  tempo;
-  arr;
+  public accDet = false;
+  public tempo;
+  public arr;
+  public tempAcc;
+  public arrAcc;
+
   constructor(private http: HttpClient, private modalService: NgbModal) {}
 
   ngOnInit(): void {}
@@ -63,5 +67,18 @@ export class MenuComponent implements OnInit {
     this.modalService.open(ShowMenuModalComponent, {
       centered: true,
     });
+  }
+
+  async getAccDet() {
+    const url = 'http://localhost:3500/getaccdet';
+    let email = sessionStorage.getItem('semail');
+    let semail = { email };
+    console.log(semail);
+    const result: any = await this.http.post(url, semail).toPromise();
+    console.log(result);
+    this.tempAcc = result;
+    this.arrAcc = this.tempAcc[0];
+
+    this.accDet = true;
   }
 }

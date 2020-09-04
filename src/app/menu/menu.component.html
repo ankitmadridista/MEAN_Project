@@ -1,5 +1,3 @@
-<p>menu works!</p>
-
 <!-- new ...-->
 <div class="container-fluid">
   <div class="row justify-content-center">
@@ -86,6 +84,94 @@
         >
           <div class="col-3">
             <button class="btn btn-block btn-sm btn-secondary" (click)="book()">
+              Book Meal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bill details -->
+  <div class="row justify-content-center">
+    <div
+      class="col-sm-12 col-md-10 mt-4 border shadow d-flex flex-column justify-content-center"
+    >
+      <div class="h3">
+        Get Account details
+        <button class="btn btn-sm btn-secondary" (click)="getAccDet()">
+          enter
+        </button>
+      </div>
+      <div class="h6">
+        <div class="row" style="height: 50px" *ngIf="accDet">
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Username
+          </div>
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Password
+          </div>
+          <div
+            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Email
+          </div>
+          <div
+            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Mobile
+          </div>
+          <div
+            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+          >
+            Bill (Rs.)
+          </div>
+        </div>
+
+        <!-- for loop for iteration -->
+
+        <div class="row" style="height: 50px" *ngIf="accDet">
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="accDet"
+          >
+            {{ arrAcc.username }}
+          </div>
+          <div
+            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="accDet"
+          >
+            {{ arrAcc.password }}
+          </div>
+          <div
+            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="accDet"
+          >
+            {{ arrAcc.email }}
+          </div>
+          <div
+            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="accDet"
+          >
+            {{ arrAcc.mobile }}
+          </div>
+          <div
+            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            *ngIf="accDet"
+          >
+            {{ arrAcc.bill }}
+          </div>
+        </div>
+        <div
+          class="row justify-content-center align-items-center mt-2"
+          *ngIf="accDet"
+        >
+          <div class="col-3">
+            <button class="btn btn-block btn-sm btn-secondary">
               Book Meal
             </button>
           </div>
