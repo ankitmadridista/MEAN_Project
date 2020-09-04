@@ -16,7 +16,7 @@ export class LogoutModalComponent implements OnInit {
   }
   logOutAndClose() {
     sessionStorage.removeItem('sid');
-
+    sessionStorage.removeItem('semail');
     // dismiss the modal
     this.activeModal.dismiss();
 

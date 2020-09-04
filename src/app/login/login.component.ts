@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public uiInvalidCredential = false;
 
   public fbFormGroup = this.fb.group({
-    username: ['', Validators.required],
+    email: ['', Validators.required],
     password: ['', Validators.required],
   });
 
@@ -23,7 +23,10 @@ export class LoginComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    sessionStorage.removeItem('sid');
+    sessionStorage.removeItem('semail');
+  }
 
   async loginProcessHere() {
     const data = this.fbFormGroup.value;
@@ -35,11 +38,14 @@ export class LoginComponent implements OnInit {
 
     //console.log(result);
 
-    if (result.opr && data.username == 'admin' && data.password == 'admin') {
+    if (result.opr && data.email == 'admin' && data.password == 'admin') {
       sessionStorage.setItem('sid', 'admin');
       this.router.navigate(['admin-home']);
     } else if (result.opr) {
       sessionStorage.setItem('sid', 'user');
+      sessionStorage.setItem('semail', data.email);
+      console.log(sessionStorage.getItem('sid'));
+      console.log(sessionStorage.getItem('semail'));
       this.router.navigate(['home']);
     } else {
       this.uiInvalidCredential = true;

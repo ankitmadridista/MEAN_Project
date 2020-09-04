@@ -45,6 +45,7 @@ export class AdminMenuComponent implements OnInit {
 
   async showAdminMenu() {
     //ajax call
+
     const url = 'http://localhost:3500/showadminmenu';
     const result: any = await this.http.get(url).toPromise();
     console.log(result);
