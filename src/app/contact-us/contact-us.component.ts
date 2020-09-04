@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact-us.component.css'],
 })
 export class ContactUsComponent implements OnInit {
-  public imgsrc = 'assets/contact.svg';
+  public imgsrc = 'assets/contact2.svg';
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

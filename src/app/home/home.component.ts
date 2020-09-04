@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LogoutModalComponent } from '../logout-modal/logout-modal.component';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { LogoutModalComponent } from '../logout-modal/logout-modal.component';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  public faUtensils = faUtensils;
   constructor(private router: Router, private modalService: NgbModal) {}
 
   ngOnInit(): void {
