@@ -1,0 +1,38 @@
+create database user;
+show databases;
+use user;
+
+show tables;
+
+drop table login;
+create table login 
+(
+username varchar(50) not null,
+password varchar(50) not null,
+email varchar(50) not null unique,
+mobile int8  not null,
+bill int8 default 0
+);
+
+
+insert into login (username,password,email,mobile) values ('toni','kroos','tk8@gmail.com',2137612793 );
+insert into login (username,password,email,mobile) values ('luka','modric','lm10@gmail.com',8765432876 );
+insert into login (username,password,email,mobile) values ('sergio','ramos','sr4@gmail.com',9167389311 );
+insert into login (username,password,email,mobile) values ('admin','admin','admin',2137612793 );
+
+update login set bill = bill+100  where email = 'tk8@gmail.com';
+delete from login where username = 'fede';
+
+select * from login;
+
+drop table lunch;
+create table lunch(dayN varchar(20), itemId varchar(10) primary key, rice varchar(20), rotis varchar(20), curry varchar(20),sweetdish varchar(20), price float(10,7));
+
+insert into lunch values("monday","i01","Jira Rice","Chapati","Dum_Aloo","Gulab Jamun",100),("tuesday","i02","Plain Rice","Aloo Paratha","Matar Panner","Malai Kulfi",100),
+("wednesday","i03","Veg Biryani","Tandoor Roti","Veg Kolhapuri","Mawa Cake",100),("thursday","i04","Lemon Rice","Bhatoore","Chole","Basundi",100),
+("friday","i05","Shahi Pulao","Nawabi Naan","Shahi Paneer","Caramel Custard",100),("saturday","i06","Dal Khichdi","Pav","Pav Bhaji","Chena Rasgulla",100);
+
+select * from lunch;
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Halamadrid@4';
+flush privileges;
