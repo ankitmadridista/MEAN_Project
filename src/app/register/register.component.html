@@ -6,8 +6,12 @@
       style="height: 85vh; background: whitesmoke; margin-top: 60px"
     >
       <div class="display-4 mb-1">Sign up now</div>
-      <div class="alert alert-danger my-1" role="alert">
-        INVALID CREDENTIALS...!!!
+      <div
+        class="alert alert-danger my-1"
+        role="alert"
+        *ngIf="uiInvalidCredential"
+      >
+        Email-ID already exist...!!!
       </div>
       <div class="form-group mt-1">
         <label>Email address</label>

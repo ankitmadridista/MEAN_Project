@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
     email: ['', Validators.required],
     mobile: ['', Validators.required],
   });
+  public uiInvalidCredential = false;
 
   constructor(
     private fb: FormBuilder,
@@ -35,13 +36,22 @@ export class RegisterComponent implements OnInit {
   }
 
   async registerHere() {
-    this.validateData();
+    //email verification
     const data = this.fbFormGroup.value;
-    //console.log(data);
-    const url = 'http://localhost:3500/adduser';
+    let em = data.email;
+    let dataEmail = { em };
 
-    await this.http.post(url, data).toPromise();
-
-    //this.router.navigate(['login']);
+    const urlver = 'http://localhost:3500/emailver';
+    const result: any = await this.http.post(urlver, dataEmail).toPromise();
+    if (result.msg == true) {
+      this.uiInvalidCredential = true;
+    } else {
+      this.validateData();
+      //console.log(data);
+      const url = 'http://localhost:3500/adduser';
+      await this.http.post(url, data).toPromise();
+      window.alert('Registration Succesfull...!!!');
+      this.router.navigate(['login']);
+    }
   }
 }
