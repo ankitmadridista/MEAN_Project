@@ -51,7 +51,12 @@ export class AdminMenuComponent implements OnInit {
 
     this.marr = result;
 
-    this.menuData = true;
-    this.mRowData = true;
+    if (this.menuData == false && this.mRowData == false) {
+      this.menuData = true;
+      this.mRowData = true;
+    } /*else if (this.menuData == true && this.mRowData == true) {
+      this.menuData = false;
+      this.mRowData = false;
+    }*/
   }
 }

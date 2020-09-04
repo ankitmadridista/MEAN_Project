@@ -80,6 +80,16 @@
             {{ arr.price }}
           </div>
         </div>
+        <div
+          class="row justify-content-center align-items-center mt-2"
+          *ngIf="menu"
+        >
+          <div class="col-3">
+            <button class="btn btn-block btn-sm btn-primary" (click)="book()">
+              Book Meal
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

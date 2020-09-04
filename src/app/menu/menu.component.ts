@@ -58,4 +58,6 @@ export class MenuComponent implements OnInit {
     //centered: true,
     //});
   }
+
+  async book() {}
 }
