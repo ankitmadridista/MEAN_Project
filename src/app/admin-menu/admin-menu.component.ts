@@ -7,9 +7,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./admin-menu.component.css'],
 })
 export class AdminMenuComponent implements OnInit {
-  public arr;
+  public uarr;
+  public marr;
   public userData = false;
+  public uRowData = false;
   public menuData = false;
+  public mRowData = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
@@ -20,23 +23,35 @@ export class AdminMenuComponent implements OnInit {
     const result: any = await this.http.get(url).toPromise();
     console.log(result);
 
-    this.arr = result;
+    this.uarr = result;
 
     this.userData = true;
-    this.menuData = true;
+    this.uRowData = true;
   }
 
   async del(input) {
     //ajax call
     let obj = { input };
-    //console.log(obj);
+    console.log(obj);
     const url = 'http://localhost:3500/del';
     let results = await this.http.post(url, obj).toPromise();
-    //console.log('on client side', results);
+    console.log('on client side', results);
 
     if (results) {
-      this.menuData = false;
+      this.uRowData = false;
       this.showUsers();
     }
+  }
+
+  async showAdminMenu() {
+    //ajax call
+    const url = 'http://localhost:3500/showadminmenu';
+    const result: any = await this.http.get(url).toPromise();
+    console.log(result);
+
+    this.marr = result;
+
+    this.menuData = true;
+    this.mRowData = true;
   }
 }
