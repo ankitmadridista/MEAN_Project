@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ShowMenuModalComponent } from '../show-menu-modal/show-menu-modal.component';
 
 @Component({
   selector: 'app-menu',
@@ -9,10 +7,10 @@ import { ShowMenuModalComponent } from '../show-menu-modal/show-menu-modal.compo
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  public uiInvalidCredential = false;
+  public menu = false;
   tempo;
   arr;
-  constructor(private http: HttpClient, private modalService: NgbModal) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
@@ -54,7 +52,7 @@ export class MenuComponent implements OnInit {
     this.tempo = result;
     this.arr = this.tempo[0];
 
-    this.uiInvalidCredential = true;
+    this.menu = true;
 
     //this.modalService.open(ShowMenuModalComponent, {
     //centered: true,
