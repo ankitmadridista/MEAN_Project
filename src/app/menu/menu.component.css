@@ -1,0 +1,7 @@
+.container-fluid {
+  background: url("src/assets/1.svg");
+  background: fixed;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

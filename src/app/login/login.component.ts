@@ -4,12 +4,15 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  public faUtensils = faUtensils;
   public uiInvalidCredential = false;
 
   public fbFormGroup = this.fb.group({

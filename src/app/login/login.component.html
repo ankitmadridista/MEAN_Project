@@ -1,9 +1,17 @@
-<div class="container-fluid" style="height: 100vh">
+<div class="container-fluid" style="height: 100vh; background: #e3f2fd">
+  <div class="row justify-content-center">
+    <div class="display-4">WELCOME TO PARADISE INN</div>
+  </div>
+  <div class="row justify-content-center">
+    <div>
+      <fa-icon [icon]="faUtensils" style="font-size: 52px"></fa-icon>
+    </div>
+  </div>
   <div class="row justify-content-center">
     <div
       class="col-md-6 col-sm-12 border shadow d-flex flex-column justify-content-center"
       [formGroup]="fbFormGroup"
-      style="height: 70vh; background: whitesmoke; margin-top: 100px"
+      style="height: 70vh; background: whitesmoke; margin-top: 20px"
     >
       <div class="display-4">LOGIN HERE</div>
       <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
@@ -32,7 +40,7 @@
         <label class="form-check-label" for="exampleCheck1">Remember Me</label>
       </div>
       <button
-        class="btn btn-primary btn-sm my-2"
+        class="btn btn-info btn-sm my-2"
         [disabled]="!fbFormGroup.valid"
         (click)="loginProcessHere()"
       >
