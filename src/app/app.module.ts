@@ -19,9 +19,10 @@ import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 import { ShowMenuModalComponent } from './show-menu-modal/show-menu-modal.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ForgetComponent } from './forget/forget.component';
 
 @NgModule({
-  declarations: [AppComponent, Page1Component, HomeComponent, LoginComponent, RegisterComponent, PageNotFoundComponent, ContactUsComponent, AboutUsComponent, MenuComponent, LogoutModalComponent, ShowMenuModalComponent, AdminMenuComponent, AdminHomeComponent],
+  declarations: [AppComponent, Page1Component, HomeComponent, LoginComponent, RegisterComponent, PageNotFoundComponent, ContactUsComponent, AboutUsComponent, MenuComponent, LogoutModalComponent, ShowMenuModalComponent, AdminMenuComponent, AdminHomeComponent, ForgetComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
