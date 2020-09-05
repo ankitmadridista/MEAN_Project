@@ -67,8 +67,8 @@ export class RegisterComponent implements OnInit {
   async registerHere() {
     //email verification
     const data = this.fbFormGroup.value;
-    let em = data.email;
-    let dataEmail = { em };
+    let email = data.email;
+    let dataEmail = { email };
 
     const urlver = 'http://localhost:3500/emailver';
     const result: any = await this.http.post(urlver, dataEmail).toPromise();
