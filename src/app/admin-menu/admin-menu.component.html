@@ -1,37 +1,37 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <!-- get user data Block -->
-    <div class="col-sm-12 col-md-10 mt-4 border shadow d-flex flex-column">
+    <div class="col-sm-12 col-md-10 mt-4 shadow d-flex flex-column">
       <div class="h3">
         User Info
         <button class="btn btn-sm btn-secondary" (click)="showUsers()">
           enter
         </button>
       </div>
-      <div class="h6">
-        <div class="row" style="height: 50px" *ngIf="userData">
+      <div>
+        <div class="row h5" style="height: 50px" *ngIf="userData">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Username
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Password
           </div>
           <div
-            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-4 border-bottom d-flex justify-content-center align-items-center"
           >
             Email
           </div>
           <div
-            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-3 border-bottom d-flex justify-content-center align-items-center"
           >
             Mobile
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
           >
             Task
           </div>
@@ -39,36 +39,36 @@
 
         <!-- for loop for iteration -->
 
-        <div class="row" style="height: 50px" *ngFor="let x of uarr">
+        <div class="row h6" style="height: 50px" *ngFor="let x of uarr">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="uRowData"
           >
             {{ x.username }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="uRowData"
           >
             {{ x.password }}
           </div>
           <div
-            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-4 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="uRowData"
           >
             {{ x.email }}
           </div>
           <div
-            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-3 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="uRowData"
           >
             {{ x.mobile }}
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="uRowData"
           >
-            <button class="btn btn-sm btn-warning" (click)="del(x.username)">
+            <button class="btn btn-sm btn-secondary" (click)="del(x.username)">
               del
             </button>
           </div>
@@ -77,47 +77,47 @@
     </div>
 
     <!-- get Menu data -->
-    <div class="col-sm-12 col-md-10 mt-4 border shadow d-flex flex-column">
+    <div class="col-sm-12 col-md-10 mt-4 shadow d-flex flex-column">
       <div class="h3">
         Menu
         <button class="btn btn-sm btn-secondary" (click)="showAdminMenu()">
           enter
         </button>
       </div>
-      <div class="h6">
-        <div class="row" style="height: 40px" *ngIf="menuData">
+      <div>
+        <div class="row h5" style="height: 40px" *ngIf="menuData">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Day
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
           >
             Item_ID
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Rice/Main Course
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Roti
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Veggies or Curries
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Dessert
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
           >
             Price (Rs.)
           </div>
@@ -125,45 +125,45 @@
 
         <!-- for loop for iteration -->
 
-        <div class="row mb-2" style="height: 50px" *ngFor="let x of marr">
+        <div class="row h6" style="height: 50px" *ngFor="let x of marr">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.dayN.toUpperCase() }}
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.itemId }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.rice }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.rotis }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.curry }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.sweetdish }}
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="mRowData"
           >
             {{ x.price }}
