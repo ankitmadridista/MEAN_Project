@@ -18,6 +18,10 @@ export class AdminMenuComponent implements OnInit {
   ngOnInit(): void {}
 
   async showUsers() {
+    /*if (this.userData == true && this.uRowData == true) {
+      this.userData = false;
+      this.uRowData = false;
+    } else {}*/
     //ajax call
     const url = 'http://localhost:3500/showusers';
     const result: any = await this.http.get(url).toPromise();
