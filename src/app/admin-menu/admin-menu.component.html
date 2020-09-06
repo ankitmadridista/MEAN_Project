@@ -5,7 +5,7 @@
       <div class="h3">
         User Info
         <button class="btn btn-sm btn-secondary" (click)="showUsers()">
-          enter
+          <fa-icon [icon]="faSignInAlt" style="font-size: 15px"></fa-icon>
         </button>
       </div>
       <div>
@@ -69,7 +69,7 @@
             *ngIf="uRowData"
           >
             <button class="btn btn-sm btn-secondary" (click)="del(x.username)">
-              del
+              <fa-icon [icon]="faTrash" style="font-size: 12px"></fa-icon>
             </button>
           </div>
         </div>
@@ -81,7 +81,7 @@
       <div class="h3">
         Menu
         <button class="btn btn-sm btn-secondary" (click)="showAdminMenu()">
-          enter
+          <fa-icon [icon]="faSignInAlt" style="font-size: 15px"></fa-icon>
         </button>
       </div>
       <div>

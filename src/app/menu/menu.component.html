@@ -2,43 +2,48 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div
-      class="col-sm-12 col-md-10 mt-4 border shadow d-flex flex-column justify-content-center"
+      class="col-sm-12 col-md-10 mt-4 border-bottom d-flex flex-column justify-content-center"
     >
       <div class="h3">
         Today's Menu
         <button class="btn btn-sm btn-secondary" (click)="showMenu()">
-          enter
+          <fa-icon [icon]="faSignInAlt" style="font-size: 18px"></fa-icon>
         </button>
+      </div>
+      <div class="alert alert-danger display-3" role="alert" *ngIf="sundayInd">
+        SORRY...!!!<br />
+        We Are Closed Today See You Tomorrow.<br />
+        HAVE A GOOD DAY.
       </div>
       <div class="h6">
         <div class="row" style="height: 50px" *ngIf="menu">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Day
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Rice
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Roti
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Curry
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Sweet_Dish
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Total_Price
           </div>
@@ -48,32 +53,32 @@
 
         <div class="row" style="height: 50px" *ngIf="menu">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             {{ arr.dayN }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             {{ arr.rice }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             {{ arr.rotis }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             {{ arr.curry }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             {{ arr.sweetdish }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             {{ arr.price }}
           </div>
@@ -95,38 +100,38 @@
   <!-- Bill details -->
   <div class="row justify-content-center">
     <div
-      class="col-sm-12 col-md-10 mt-4 border shadow d-flex flex-column justify-content-center"
+      class="col-sm-12 col-md-10 mt-4 border-bottom d-flex flex-column justify-content-center"
     >
       <div class="h3">
         Get Account details
         <button class="btn btn-sm btn-secondary" (click)="getAccDet()">
-          enter
+          <fa-icon [icon]="faSignInAlt" style="font-size: 18px"></fa-icon>
         </button>
       </div>
       <div class="h6">
         <div class="row" style="height: 50px" *ngIf="accDet">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Username
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
           >
             Password
           </div>
           <div
-            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-4 border-bottom d-flex justify-content-center align-items-center"
           >
             Email
           </div>
           <div
-            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-3 border-bottom d-flex justify-content-center align-items-center"
           >
             Mobile
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
           >
             Bill (Rs.)
           </div>
@@ -136,31 +141,31 @@
 
         <div class="row" style="height: 50px" *ngIf="accDet">
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="accDet"
           >
             {{ arrAcc.username }}
           </div>
           <div
-            class="col-2 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-2 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="accDet"
           >
             {{ arrAcc.password }}
           </div>
           <div
-            class="col-4 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-4 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="accDet"
           >
             {{ arrAcc.email }}
           </div>
           <div
-            class="col-3 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-3 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="accDet"
           >
             {{ arrAcc.mobile }}
           </div>
           <div
-            class="col-1 border rounded shadow d-flex justify-content-center align-items-center"
+            class="col-1 border-bottom d-flex justify-content-center align-items-center"
             *ngIf="accDet"
           >
             {{ arrAcc.bill }}

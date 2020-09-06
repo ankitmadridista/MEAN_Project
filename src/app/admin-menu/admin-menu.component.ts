@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-admin-menu',
   templateUrl: './admin-menu.component.html',
@@ -13,6 +14,8 @@ export class AdminMenuComponent implements OnInit {
   public uRowData = false;
   public menuData = false;
   public mRowData = false;
+  public faTrash = faTrash;
+  public faSignInAlt = faSignInAlt;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
