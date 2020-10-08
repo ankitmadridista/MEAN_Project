@@ -178,4 +178,37 @@
       </div>
     </div>
   </div>
+  <div class="row justify-content-center">
+    <div
+      class="col-sm-12 col-md-10 mt-4 d-flex flex-column justify-content-center"
+    >
+      <div class="h5 alert alert-danger" *ngIf="alertEmail" role="alert">
+        Incorrect Email-ID..!!!
+      </div>
+      <div class="h3">
+        Delete Yourself
+        <button class="btn btn-sm btn-secondary" (click)="deleteSelf()">
+          <fa-icon [icon]="faTrash" style="font-size: 18px"></fa-icon>
+        </button>
+      </div>
+      <div class="col-6 p-0" [formGroup]="fbFormGroup1" *ngIf="inputEmail">
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          aria-describedby="emailHelp"
+          placeholder="Enter email here"
+        />
+      </div>
+      <div class="mt-2" *ngIf="inputEmail">
+        <button
+          class="btn btn-sm btn-secondary btn-block col-1"
+          (click)="chekEmail()"
+          [disabled]="!fbFormGroup1.valid"
+        >
+          <fa-icon [icon]="faSignInAlt" style="font-size: 18px"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

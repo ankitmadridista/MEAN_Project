@@ -20,9 +20,10 @@ import { ShowMenuModalComponent } from './show-menu-modal/show-menu-modal.compon
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ForgetComponent } from './forget/forget.component';
+import { DeleteUserModalComponent } from './delete-user-modal/delete-user-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, Page1Component, HomeComponent, LoginComponent, RegisterComponent, PageNotFoundComponent, ContactUsComponent, AboutUsComponent, MenuComponent, LogoutModalComponent, ShowMenuModalComponent, AdminMenuComponent, AdminHomeComponent, ForgetComponent],
+  declarations: [AppComponent, Page1Component, HomeComponent, LoginComponent, RegisterComponent, PageNotFoundComponent, ContactUsComponent, AboutUsComponent, MenuComponent, LogoutModalComponent, ShowMenuModalComponent, AdminMenuComponent, AdminHomeComponent, ForgetComponent, DeleteUserModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -100,11 +100,11 @@ let delUsers = async (ip) => {
   const connection = mysql.createConnection(DB_CONFIG);
 
   await connection.connectAsync();
-
-  let sql = "DELETE FROM LOGIN WHERE USERNAME = ?";
+  console.log(ip.email);
+  let sql = "DELETE FROM LOGIN WHERE EMAIL = ?";
   //let sql = "SELECT * FROM lunch WHERE rice = ?";
 
-  await connection.queryAsync(sql, [ip.input]);
+  await connection.queryAsync(sql, [ip.email]);
   //console.log("done");
   await connection.endAsync();
 };

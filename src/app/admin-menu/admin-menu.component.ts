@@ -16,6 +16,7 @@ export class AdminMenuComponent implements OnInit {
   public mRowData = false;
   public faTrash = faTrash;
   public faSignInAlt = faSignInAlt;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
@@ -38,8 +39,8 @@ export class AdminMenuComponent implements OnInit {
 
   async del(input) {
     //ajax call
-    let obj = { input };
-    //console.log(obj);
+    let obj = { email: input };
+    console.log(obj);
     const url = 'http://localhost:3500/del';
     let results = await this.http.post(url, obj).toPromise();
     //console.log('on client side', results);

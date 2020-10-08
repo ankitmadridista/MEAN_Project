@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     sessionStorage.removeItem('sid');
     sessionStorage.removeItem('semail');
+    sessionStorage.removeItem('fsemail');
   }
 
   async loginProcessHere() {

@@ -62,8 +62,8 @@ app.post("/del", async (req, res) => {
   try {
     // lets read the query parameter
     const input = req.body;
-    //console.log("inside del users");
-    //console.log(input);
+    console.log("inside del users");
+    console.log(input);
     // calling db logic :: async :: non blocking
     await dbaddUser.delUsers(input);
 

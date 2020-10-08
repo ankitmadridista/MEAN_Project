@@ -3,6 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ShowMenuModalComponent } from '../show-menu-modal/show-menu-modal.component';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
+import { FormBuilder, Validators } from '@angular/forms';
+import { DeleteUserModalComponent } from '../delete-user-modal/delete-user-modal.component';
 
 @Component({
   selector: 'app-menu',
@@ -17,9 +21,28 @@ export class MenuComponent implements OnInit {
   public tempAcc;
   public arrAcc;
   public faSignInAlt = faSignInAlt;
+  public faTrash = faTrash;
   public sundayInd = false;
+  public alertEmail = false;
+  public inputEmail = false;
 
-  constructor(private http: HttpClient, private modalService: NgbModal) {}
+  public fbFormGroup1 = this.fb.group({
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(
+          '^[a-zA-Z0-9_\\.]+@[a-zA-Z0-9_\\.]+(\\.[a-zA-Z0-9_\\.]+)+$'
+        ),
+      ],
+    ],
+  });
+
+  constructor(
+    private http: HttpClient,
+    private fb: FormBuilder,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {}
 
@@ -52,8 +75,8 @@ export class MenuComponent implements OnInit {
     } else {
       let abc = { y };
 
-      console.log('y', y);
-      console.log(abc);
+      // console.log('y', y);
+      // console.log(abc);
 
       // ajax call
       const url = 'http://localhost:3500/showmenu';
@@ -83,5 +106,27 @@ export class MenuComponent implements OnInit {
     this.arrAcc = this.tempAcc[0];
 
     this.accDet = true;
+  }
+
+  public deleteSelf() {
+    this.inputEmail = true;
+  }
+
+  async chekEmail() {
+    const data = this.fbFormGroup1.value;
+    const url = 'http://localhost:3500/emailver';
+    const result: any = await this.http.post(url, data).toPromise();
+    console.log(data);
+
+    if (result.msg) {
+      this.alertEmail = false;
+
+      this.modalService.open(DeleteUserModalComponent, {
+        centered: true,
+      });
+    } else {
+      this.alertEmail = true;
+      sessionStorage.removeItem('fsemail');
+    }
   }
 }
